@@ -13,37 +13,25 @@ private:
 	
 public:
 	Payment(int pID, double ptotalPayment);
-	void setPaymentDetails(int sID, double stotalPayment);
-	void validatePaymentDetails();
-	double getPaymentAmt();
-	void getPaymentDetails();
+
+	void displayPaymentDetails();
+	
 ~Payment();
 };
 
-//Payment::Payment();
 
 Payment::Payment(int pID, double ptotalPayment)
 {
 	PaymentID = pID;
 	totalPayment = ptotalPayment;
 }
-void Payment::setPaymentDetails(int sID, double stotalPayment) 
-{
 
-}
-void Payment::getPaymentDetails()
+void Payment::displayPaymentDetails()
 {
 	cout << "Payment ID :" << PaymentID << endl;
 	cout << "Payment Amount :" << totalPayment << endl;
 }
-void Payment::validatePaymentDetails()
-{
 
-}
-double Payment::getPaymentAmt()
-{
-	return totalPayment;
-}
 Payment::~Payment()
 {
 	cout << "Payment is deleted " << endl;
@@ -51,9 +39,9 @@ Payment::~Payment()
 
 int main(){
 	Payment*p1;
-	p1=new Payment();
-	p1->("213","200.00");
-	p1->getPaymentDetails();
+	p1=new Payment(213,200.00);
+
+	p1->displayPaymentDetails();
 	
 	delete p1;
 }
