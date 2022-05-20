@@ -1,0 +1,64 @@
+//IT21357480_Top Management
+#include <iostream>
+#include <string.h>
+#include <iomanip>
+
+
+
+using namespace std;
+
+class Top_Management
+{
+	protected : 
+	char name[35];
+	char manager_id[10];
+	char report_id[10];
+	
+	                 
+	
+	public : 
+ 
+    void setmanagerdetails(char mname[],char mid[],char rid[]);
+	void displaymanagerdetails();
+	void displayreport();
+	~Top_Management();
+	       
+};
+void Top_Management::setmanagerdetails(char mname[],char mid[],char rid[]){
+	           strcpy(name,mname);
+			   strcpy(manager_id,mid);
+               strcpy(report_id,rid);
+               
+	
+}
+void Top_Management::displayreport(){
+	char x;
+	
+	cout<<"is the report cover all the relavant areas? if 'y'es 'n'o : ";
+	cin>>x;
+	if (x='y'){
+		cout<<"Report is accepted"<<endl;
+	}
+	else{
+		if(x='n')
+		cout<<"Incompleted report"<<endl;
+	}
+}
+void Top_Management::displaymanagerdetails(){
+	cout<<"Manager Name:"<<name<<endl
+		<<"Manager ID:"<<manager_id<<endl
+		<<"Report ID"<<report_id<<endl;
+	
+}
+
+int main(){
+	Top_Management*t1;
+	t1=new Top_Management();
+	t1->setmanagerdetails("Jake Scott","M005","001");
+	t1->displayreport();
+	t1->displaymanagerdetails();
+	
+	
+	
+}
+
