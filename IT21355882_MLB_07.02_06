@@ -1,0 +1,56 @@
+//IT21355882_GestUser
+#include<iostream>
+#include<string.h>
+using namespace std;
+
+// class gest user
+class gestUser{
+	protected : 
+	    char name[20];
+	    char gender[20];
+	    char country[20];
+	    char date[20];
+	    char email[20];
+	    
+	public :
+	   
+	   void displayUser();  	
+	   void setUserDetails(char uname[],char ugender[],char ucountry[],char udate[],char uemail[]);
+	   ~gestUser();
+	    		       
+};
+
+
+void gestUser::setUserDetails(char uname[],char ugender[],char ucountry[],char udate[],char uemail[])
+{
+	strcpy(name,uname);
+	strcpy(gender,ugender);
+	strcpy(country,ucountry);
+	strcpy(date,udate);
+	strcpy(email,uemail);
+}
+void gestUser::displayUser()
+{
+	cout<<"User Name:"<<name<<endl
+	    <<"Gender:"<<gender<<endl
+	    <<"Country:"<<country<<endl
+	    <<"Date:"<<date<<endl
+	    <<"email:"<<email
+	    <<endl;
+}
+gestUser::~gestUser(){
+	cout<<" "<<endl;
+}
+
+
+int main(){
+	
+	
+	gestUser*gu1;
+	gu1=new gestUser();
+	gu1->setUserDetails("Kamal","Male","Sri Lanka","2022/05/12","kamal67@gmail.com");
+	gu1->displayUser();
+	
+	delete gu1;
+	
+}
