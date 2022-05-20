@@ -1,0 +1,34 @@
+//IT21355882_wish list
+#include<iostream>
+#include<string>
+using namespace std;
+
+//class wish list
+
+class wishlist{
+	private:
+		string name;
+		string AppID;
+	public:
+	   void setDetails(string appName,string appID);
+	   void display();	
+
+};
+
+void wishlist::setDetails(string appName,string appID){
+	name= appName;
+	AppID= appID;
+};
+void wishlist::display(){
+	cout<<"App Name:"<<name<<endl
+	    <<"App ID:"<<AppID<<endl;
+}
+
+int main(){
+	wishlist*w1;
+	w1=new wishlist();
+	w1->setDetails("AML","546");
+	w1->display();
+	
+	return 0;
+}
