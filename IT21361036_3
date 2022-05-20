@@ -13,38 +13,29 @@ private:
 	char mssg[50];
 
 public:
-	Feedback() {};
+	Feedback() ;
 	Feedback(int fID, char fEmail[30], char fMssg[50]);
-	void setFeedback(int FID, char Femail[30], char FMssg[60]);
-	void display();
-	int getFeedbackDetails();
+	void DisplayFeedbackDetails();
 };
 
 Feedback::Feedback()
 {
-	int FeedbackID = 0;
-	char email;
-	char mssg;
 }
-Feedback::Feedback(int fID, char fEmail[30], char fMssg[50])
+Feedback::Feedback(int fID, char fEmail[10], char fMssg[50])
 {
-	fID = FeedbackID;
-	fEmail = email;
-	fMssg = mssg;
+	FeedbackID = fID;
+	strcpy(email, fEmail);
+	strcpy(mssg, fMssg);
 }
-void Feedback::setFeedback(int FID, char*Femail, char*FMssg)
-{
-	FID = FeedbackID;
-	Femail = email;
-	FMssg = mssg;
-}
-int Feedback::getFeedbackDetails()
-{
-	return FeedbackDetails;
-}
-void Feedback::display()
+
+void Feedback::DisplayFeedbackDetails()
 {
 	cout << "Feedback ID :" << FeedbackID << endl;
 	cout << "Email Address :" << email << endl;
 	cout << "Feedback :" << mssg << endl;
+}
+int main()
+{
+	Feedback Fb(4001, "kamal98@gmail.com", "The app is stuck for too long and shows some errors.");
+	Fb.DisplayFeedbackDetails();
 }
