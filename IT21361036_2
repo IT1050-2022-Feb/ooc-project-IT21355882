@@ -1,0 +1,59 @@
+//IT21361036_Payment
+#include<iostream>
+#include<string>
+#include<cstring>
+
+using namespace std;
+
+class Payment
+{
+private:
+	int PaymentID;
+	double totalPayment;
+	
+public:
+	Payment(int pID, double ptotalPayment);
+	void setPaymentDetails(int sID, double stotalPayment);
+	void validatePaymentDetails();
+	double getPaymentAmt();
+	void getPaymentDetails();
+~Payment();
+};
+
+//Payment::Payment();
+
+Payment::Payment(int pID, double ptotalPayment)
+{
+	PaymentID = pID;
+	totalPayment = ptotalPayment;
+}
+void Payment::setPaymentDetails(int sID, double stotalPayment) 
+{
+
+}
+void Payment::getPaymentDetails()
+{
+	cout << "Payment ID :" << PaymentID << endl;
+	cout << "Payment Amount :" << totalPayment << endl;
+}
+void Payment::validatePaymentDetails()
+{
+
+}
+double Payment::getPaymentAmt()
+{
+	return totalPayment;
+}
+Payment::~Payment()
+{
+	cout << "Payment is deleted " << endl;
+}
+
+int main(){
+	Payment*p1;
+	p1=new Payment();
+	p1->("213","200.00");
+	p1->getPaymentDetails();
+	
+	delete p1;
+}
