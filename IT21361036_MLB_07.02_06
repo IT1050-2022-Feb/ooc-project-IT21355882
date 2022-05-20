@@ -1,0 +1,71 @@
+//IT21361036_System Admin
+#include<iostream>
+#include<string>
+#include<cstring>
+
+using namespace std;
+
+class SystemAdmin
+{
+private:
+	string systemID;
+	string name;
+	string address;
+	string email;
+	string contactNo;
+
+public:
+	SystemAdmin();
+	SystemAdmin(string psID, string pname, string paddress, string pemail, string pcontactNo);
+	//void setAdminDetails(string SsID, string Sname, string Saddress, string Semail, string ScontactNo);
+	void displayDetails();
+//	int getAdminDetails();
+
+};
+
+SystemAdmin::SystemAdmin() {
+	systemID="";
+	name="";
+    address="";
+	email="";
+	contactNo="";
+}
+SystemAdmin::SystemAdmin(string  psID, string  pname, string  paddress, string  pemail, string  pcontactNo)
+{
+	systemID=psID ;
+	name=pname;
+	address=paddress;
+  email=pemail;
+  contactNo=	pcontactNo ;
+}
+/*void SystemAdmin::setAdminDetails(string  SsID, string  Sname, string  Saddress, string  Semail, string ScontactNo)
+{
+	SsID = systemID;
+	Sname = name;
+	Saddress = address;
+	Semail = email;
+	ScontactNo = contactNo;
+}*/
+/*int SystemAdmin::getAdminDetails()
+{
+	return AdminDetails;
+}*/
+void SystemAdmin::displayDetails()
+{
+	cout << "System ID= " << systemID << endl;
+	cout << "System Admin name= " << name << endl;
+	cout << "System Admin address= " << address << endl;
+	cout << "System Admin  email= " << email << endl;
+	cout << "System Admin contact No= " << contactNo << endl;
+}
+int main()
+{
+	SystemAdmin* SysA1= new SystemAdmin("SA045", "Saman", "97/6,Galle rd,Kandy", "saman0304@gmail.com", "0787893019");
+	SysA1 -> displayDetails();
+	delete SysA1;
+	return 0;
+}
+
+
+
+
