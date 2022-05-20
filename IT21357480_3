@@ -1,0 +1,82 @@
+//IT21357480_Bank Account
+#include <iostream>
+#include <string>
+#include <iomanip>
+
+
+
+using namespace std;
+
+class Bank_Account
+{
+	private:
+	int acc_no;
+	string acc_name;
+	string bank_name;
+	string bank_branch;
+	string country;
+	int pay_id;
+	int amount;
+	
+
+	
+	public : 
+ 
+    Bank_Account();
+	Bank_Account(int ano,string aname,string bname,string babranch,string country);
+	void setBankAccDetails();
+	void displayBankAccDetails();
+	void setpayment(int ano,int pid,int amt);
+	void displaypayment();
+	~Bank_Account();
+	       
+};
+ 
+Bank_Account::Bank_Account(){
+	
+}
+
+Bank_Account::Bank_Account(int ano,string aname,string bname,string babranch,string ctry)
+{
+	acc_no=ano;
+	acc_name=aname;
+	bank_name=bname;
+	bank_branch=babranch;
+	country=ctry;
+	
+}
+void Bank_Account::setBankAccDetails(){
+}
+
+void Bank_Account::displayBankAccDetails(){
+	cout<<"Account No:"<<acc_no<<endl
+		<<"Account Name:"<<acc_name<<endl
+		<<"Bank Name:"<<bank_name<<endl
+		<<"Bank Branch:"<<bank_branch<<endl
+		<<"Country:"<<country<<endl;
+	
+}
+void Bank_Account::setpayment(int ano,int pid,int amt){
+	acc_no=ano;
+	pay_id=pid;
+	amount=amt;
+}
+void Bank_Account::displaypayment(){
+	cout<<"Account No:"<<acc_no<<endl
+		<<"Payment ID:"<<pay_id<<endl
+		<<"Amount:"<<amount<<endl;
+	
+}
+Bank_Account::~Bank_Account(){
+	cout<< "" << endl;
+}
+int main(){
+	
+	Bank_Account b1(456789,"Krishan Perera","Bank of Ceyelon","Colombo02","Sri Lanka");
+	b1.setBankAccDetails();
+	b1.displayBankAccDetails();
+	cout << "---------------------------------------------------------------------------------------------------------------------" << endl;
+	b1.setpayment(456789,1,4500);
+	b1.displaypayment();
+}
+
