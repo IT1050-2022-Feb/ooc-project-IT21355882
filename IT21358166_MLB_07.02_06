@@ -1,0 +1,156 @@
+//IT21358166_App_My Activity_Cart
+#include <iostream>
+#include <string>
+#include <iomanip>
+
+using namespace std;
+
+class App
+{
+private:
+	int app_ID;
+	string app_name;
+	string app_type;
+	string rating;
+	string description;
+	int price;
+
+public:
+	App();
+	App(int appID, string appName, string appType, string appRating, string appDescription, int appPrice);
+	void setAppDetails();
+	void getAppdetails();
+	void displayAppDetails();
+	~App();
+};
+class myActivity
+{
+private:
+	App app1;
+public:
+	myActivity();
+	void update();
+	void checkhistory();
+};
+class cart
+{
+private:
+	string cart_app_name;
+	int cart_app_ID;
+	int total_payment;
+
+public:
+	cart();
+	cart(string cartAppName, int cartAppID, int totalPayment);
+	void setCartDetails();
+	void getCartDetails();
+	void cartDisplay();
+};
+App::App()
+{
+}
+
+App::App(int appID, string appName, string appType, string appRating, string appDescription, int appPrice)
+{
+	app_ID = appID;
+	app_name = appName;
+	app_type = appType;
+	rating = appRating;
+	description = appDescription;
+	price = appPrice;
+}
+
+void App::setAppDetails()
+{
+}
+
+void App::getAppdetails()
+{
+}
+
+void App::displayAppDetails()
+{
+	cout << "App ID : " << app_ID << endl;
+	cout << "App Name : " << app_name << endl;
+	cout << "App Type : " << app_type << endl;
+	cout << "App Rating : " << rating << endl;
+	cout << "App Description : " << description << endl;
+	cout << "App Price : " << price << endl;
+}
+
+App::~App()
+{
+}
+myActivity::myActivity()
+{
+}
+
+void myActivity::update()
+{
+	cout << "\t--- Apps to update list ---" << endl << endl;
+	cout << "\t -> | Update all app | <-" << endl << endl;
+	cout << " \t  App name" << endl;
+	cout << "\t~ WhatsApp   -> Update" << endl;
+	cout << "\t~ Facebook   -> Update" << endl;
+	cout << "\t~ AliExpress -> Update" << endl;
+	cout << "\t~ Ebay       -> Update" << endl;
+}
+
+void myActivity::checkhistory()
+{
+	cout << "\t--- Download app list ---" << endl << endl;
+	cout << "\t  App name" << endl;
+	cout << "\tAliexpress -> Update availabele " << endl;
+	cout << "\tAmozon     -> Open " << endl;
+	cout << "\tEbay       -> Update availabele " << endl;
+	cout << "\tFacebook   -> Update availabele " << endl;
+	cout << "\tHulu       -> Open " << endl;
+	cout << "\tInstagram  -> Open " << endl;
+	cout << "\tWhatsApp   -> Update availabele " << endl;
+
+
+}
+
+cart::cart()
+{
+}
+
+cart::cart(string cartAppName, int cartAppID, int totalPayment)
+{
+	cart_app_name = cartAppName;
+	cart_app_ID = cartAppID;
+	total_payment = totalPayment;
+
+}
+
+void cart::setCartDetails()
+{
+}
+
+void cart::getCartDetails()
+{
+}
+
+void cart::cartDisplay()
+{
+	cout << "App Name : " << cart_app_name << endl;
+	cout << "App ID : " << cart_app_ID << endl;
+	cout << "Total Payment : " << total_payment << endl;
+}
+
+int main()
+{
+	cout << "---------------------------------------------------------------------------------------------------------------------" << endl;
+	App app1(00001, "WhatsApp", "Social Media", "*****", "Whatsapp is free software.It allow user to send message, voice call, share documents and others.", 000);
+	app1.displayAppDetails();
+	cout << "---------------------------------------------------------------------------------------------------------------------" << endl;
+	cout << "---------------------------------------------------- My Activity ----------------------------------------------------" << endl;
+	myActivity mya;
+	mya.update();
+	cout << "---------------------------------------------------------------------------------------------------------------------" << endl;
+	mya.checkhistory();
+	cout << "---------------------------------------------------------------------------------------------------------------------" << endl;
+	cout << "------------------------------------------------------- Cart --------------------------------------------------------" << endl;
+	cart ap("WhatsApp", 00001, 000);
+	ap.cartDisplay();
+}
